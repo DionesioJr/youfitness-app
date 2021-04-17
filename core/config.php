@@ -22,7 +22,7 @@ if (DISPLAY_ERRORS == true) {
 *----------------------------------------------------------------
 */
 // const BASE_URL = 'http://localhost/~dionesio/youfitness/app';
-const BASE_URL = 'https://youfitness.com.br/app';
+const BASE_URL = 'https://yfitness.com.br/app';
 
 /*
 *----------------------------------------------------------------
@@ -31,5 +31,5 @@ const BASE_URL = 'https://youfitness.com.br/app';
 */
 
 // const URL_API = 'http://localhost/~dionesio/youfitness/api';
-const URL_API = 'https://youfitness.com.br/api';
+const URL_API = 'https://yfitness.com.br/api';
 const PORT_API = '';
