@@ -1,0 +1,48 @@
+
+html {
+    height: 100%;
+}
+
+body {
+    content: '';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url(../img/login-fit7.jpg);
+}
+
+
+.filter-black {
+    position: fixed;
+    /* Stay in place */
+    z-index: 0;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.849);
+    /* Black w/ opacity */
+}
+
+.container {
+    margin-top: 7%;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.btn-warning {
+    color: #fff;
+    background-color: #ff9d00;
+    border-color: #ff9d00;
+}
