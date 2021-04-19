@@ -1,48 +1,33 @@
-<nav class="navbar navbar-expand-lg navbar-light" id="topnav">
+<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
   <div class="container">
-
-    <!-- Toggler -->
-    <button class="navbar-toggler mr-auto" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <a href="../" class="navbar-brand">You Fitness</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
 
-
-
-
-    <!-- User -->
-    <div class="col-auto d-none d-md-flex">
-      <div class="navbar-user">
-        <div class="dropdown">
-          <a href="" class="avatar avatar-sm avatar-online dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="<?php echo $data['youfitness']['profile_pic_url'] ?>" alt="..." class="avatar-img rounded-circle">
-          </a>
-          <!-- Menu -->
-          <div class="dropdown-menu dropdown-menu-right">
-            <a href="configuracao/perfil" class="dropdown-item"><i class="fe fe-user"></i> Perfil</a>
-            <a href="configuracao" class="dropdown-item"><i class="fe fe-settings"></i> Configuração</a>
-            <hr class="dropdown-divider">
-            <a href="login" class="dropdown-item"><i class="fe fe-power"></i> Sair </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Collapse -->
-    <div class="collapse navbar-collapse mr-auto order-lg-first" id="navbar">
-      <!-- Brand -->
-      <a class="navbar-brand mr-auto" href="">
-        <img src="./assets/img/logo.png" alt="..." class="navbar-brand-img">
-      </a>
-
-
-      <!-- Navigation -->
-      <ul class="navbar-nav mr-auto">
-
-
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/aluno">Alunos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/aluno">Configuração</a>
+        </li>
 
       </ul>
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+        <li class="nav-item dropdown">
+          <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Adminstrador
+          </a>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
+            <a class="dropdown-item" href="<?php echo BASE_URL; ?>">Perfil</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="<?php echo BASE_URL; ?>">Sair</a>
+          </div>
+        </li>
 
+      </ul>
     </div>
-
-  </div> <!-- / .container -->
-</nav>
+  </div>
+</div>

