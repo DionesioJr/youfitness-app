@@ -5,7 +5,7 @@ class Login
     {
 
         if (self::isLogged() == true) {
-            redirect('dashboard');
+            redirect('home');
         }
         new LoadingView('autenticacao/login');
     }

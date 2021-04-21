@@ -66,11 +66,11 @@
           <h3 class=" mb-3 text-center text-white">
             Bem vindos!
           </h3>
-          <p class="text-muted  mb-3 ">
+          <p class="text-white  mb-3 ">
             O You Fitness trabalha 24 horas por dia para o seu treino.
           </p>
 
-          <hr>
+          <hr style="background: white;">
 
           <!-- Form -->
 

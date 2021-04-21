@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
   <div class="container">
-    <a href="../" class="navbar-brand">You Fitness</a>
+    <a href="#" class="navbar-brand" style="color: #f39c12; font-weight: bold">You Fitness</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,7 +26,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="bd-versions">
             <a class="dropdown-item" href="<?php echo BASE_URL; ?>">Perfil</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="<?php echo BASE_URL; ?>">Sair</a>
+            <a class="dropdown-item" href="<?php echo BASE_URL; ?>/login/logout">Sair</a>
           </div>
         </li>
 
