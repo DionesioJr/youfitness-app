@@ -74,6 +74,25 @@
                             </div>
                         </div>
 
+                        <label for="">Tipo da conta</label>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="aluno" name="gender" value="aluno" class="custom-control-input" checked="">
+                                    <label class="custom-control-label" for="aluno">Aluno</label><br>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="admin" name="gender" value="admin" class="custom-control-input">
+                                    <label class="custom-control-label" for="admin">Adminstrador</label><br>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+
                     </fieldset>
 
                     <!-- <br>
