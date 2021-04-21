@@ -1,59 +1,120 @@
-   <!-- HEADER -->
-   <div class="header">
-     <div class="container-fluid">
-
-       <!-- Body -->
-       <div class="header-body d-none d-sm-none d-md-block">
-         <div class="row align-items-end">
-           <div class="col">
-
-             <!-- Title -->
-             <h1 class="header-title">
-               Configuração
-             </h1>
-           </div>
-           <!-- User -->
-           <div class="col-auto">
-             <div class="navbar-user">
-               <div class="dropdown">
-                 <a href="" class="avatar avatar-sm avatar-online dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                   <img src="<?php echo $data['youfitness']['profile_pic_url'] ?>" alt="..." class="avatar-img rounded-circle">
-                 </a>
-                 <!-- Menu -->
-                 <!-- <div class="dropdown-menu dropdown-menu-right">
-                    <a href="<?php echo BASE_URL; ?>/configuracao/perfil" class="dropdown-item"><i class="fe fe-user"></i> Perfil</a>
-                    <a href="<?php echo BASE_URL; ?>/configuracao" class="dropdown-item"><i class="fe fe-settings"></i> Configuração</a>
-                    <hr class="dropdown-divider">
-                    <a href="<?php echo BASE_URL; ?>/login/logout" class="dropdown-item"><i class="fe fe-power"></i> Sair </a>
-                </div> -->
-               </div>
-             </div>
-           </div>
-         </div> <!-- / .row -->
-
-         <div class="row align-items-center">
-           <div class="col">
-
-             <!-- Nav -->
-             <ul class="nav nav-tabs nav-overflow header-tabs">
-               <li class="nav-item">
-                 <a href="<?php echo BASE_URL; ?>/configuracao/conta" class="nav-link active">
-                   Conta
-                 </a>
-               </li>
-
-
-
-             </ul>
-
-           </div>
-         </div>
-
-
-       </div> <!-- / .header-body -->
+   <div class="page-header">
+     <div class="row">
+       <div class="col-lg-11">
+         <h3>Configuração</h3>
+       </div>
+       <div class="col-lg-1 col-md-1 col-sm-1">
+         <a href="<?php echo BASE_URL; ?>/aluno" type="button" class="btn btn-secondary">Voltar</a>
+       </div>
 
      </div>
-   </div> <!-- / .header -->
+   </div>
+
+   <div class=" bs-docs-section">
+
+     <div class="row">
+       <div class="col-lg-12">
+
+         <div class="bs-component">
+
+
+           <form action="<?php echo $data['action']; ?>" method="post">
+
+             <fieldset>
+               <legend>Dados Pessoais</legend>
+               <div class="form-row">
+                 <div class="form-group col-md-8">
+                   <label for="Nome Completo">Nome Completo</label>
+                   <input type="text" class="form-control" id="" required placeholder="João Alves">
+                 </div>
+
+                 <div class="form-group col-md-4">
+                   <label for="Nome Completo">Idade</label>
+                   <input type="number" class="form-control" required id="" placeholder="18">
+                 </div>
+
+                 <div class="form-group col-md-4">
+                   <label for="Nome Completo">Peso</label>
+                   <input type="number" class="form-control" required id="" placeholder="70">
+                 </div>
+
+                 <div class="form-group col-md-4">
+                   <label for="Nome Completo">Altura</label>
+                   <input type="number" class="form-control" required id="" placeholder="188">
+                 </div>
+
+                 <div class="form-group col-md-4">
+                   <label for="inputEstado">Sexo</label>
+                   <select id="inputEstado" required class="form-control">
+                     <option selected>Escolher...</option>
+                     <option>Masculino</option>
+                     <option>Feminino</option>
+                   </select>
+                 </div>
+               </div>
+             </fieldset>
+
+             <br>
+             <hr>
+             <br>
+
+
+             <fieldset>
+               <legend>Dados da Conta</legend>
+               <div class="form-row">
+                 <div class="form-group col-md-6">
+                   <label for="">Email</label>
+                   <input type="email" class="form-control" id="" placeholder="Email">
+                 </div>
+                 <div class="form-group col-md-6">
+                   <label for="">Senha</label>
+                   <input type="password" class="form-control" id="" placeholder="Senha">
+                 </div>
+               </div>
+
+             </fieldset>
+
+             <br>
+             <hr>
+             <br>
+
+             <fieldset>
+               <legend>Endereço</legend>
+               <div class="form-group">
+                 <label for="inputAddress">Endereço</label>
+                 <input type="text" class="form-control" id="inputAddress" placeholder="Rua dos Bobos, nº 0">
+               </div>
+               <div class="form-row">
+                 <div class="form-group col-md-6">
+                   <label for="inputCity">Cidade</label>
+                   <input type="text" class="form-control" id="inputCity">
+                 </div>
+                 <div class="form-group col-md-4">
+                   <label for="inputEstado">Estado</label>
+                   <select id="inputEstado" class="form-control">
+                     <option selected>Escolher...</option>
+                     <option>...</option>
+                   </select>
+                 </div>
+                 <div class="form-group col-md-2">
+                   <label for="inputCEP">CEP</label>
+                   <input type="text" class="form-control" id="inputCEP">
+                 </div>
+               </div>
+             </fieldset>
+
+             <br>
+             <button type="submit" class="btn btn-primary"><?php echo $data['button_submit'] ?></button>
+           </form>
+
+         </div>
+       </div>
+
+     </div>
+   </div>
+
+
+
 
 
    <div class="container-fluid">

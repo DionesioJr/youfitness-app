@@ -5,11 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <meta name="description" content="Conquiste seguidores reais no youfitness para aumentar a visibilidade do seu negócio usando o YOU-FITNESS" class="next-head" />
+  <meta name="description" content="Conquiste alunos no youfitness para aumentar a visibilidade do seu negócio usando o YOU-FITNESS" class="next-head" />
   <meta property="og:url" content="<?php echo BASE_URL; ?>" class="next-head" />
   <meta property="og:type" content="website" class="next-head" />
   <meta property="og:title" content="YOU-FITNESS | Login" class="next-head" />
-  <meta property="og:description" content="Conquiste seguidores reais no youfitness para aumentar a visibilidade do seu negócio usando o YOU-FITNESS" class="next-head" />
+  <meta property="og:description" content="Conquiste alunos no youfitness para aumentar a visibilidade do seu negócio usando o YOU-FITNESS" class="next-head" />
   <meta property="og:image" content="<?php echo BASE_URL; ?>/assets/img/logo.png" class="next-head" />
   <meta property="og:image:alt" content="YOU-FITNESS" class="next-head" />
   <meta property="og:image:width" content="1200" class="next-head" />

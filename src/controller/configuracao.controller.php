@@ -7,9 +7,9 @@ class Configuracao
         $this->conta();
     }
 
-    public function plano()
+    public function conta()
     {
         $data = $_SESSION;
-        _Application::applicationView('configuracao/plano', $data);
+        _Application::applicationView('configuracao/conta', $data);
     }
 }

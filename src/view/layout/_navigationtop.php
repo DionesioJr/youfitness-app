@@ -11,8 +11,11 @@
           <a class="nav-link" href="<?php echo BASE_URL; ?>/aluno">Alunos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo BASE_URL; ?>/aluno">Configuração</a>
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/treino">Treino</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/configuracao">Configuração</a>
+        </li> -->
 
       </ul>
       <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">

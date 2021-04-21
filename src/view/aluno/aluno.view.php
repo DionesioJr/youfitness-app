@@ -23,6 +23,7 @@
                                 <th scope="col">Nome</th>
                                 <th scope="col">Idade</th>
                                 <th scope="col">Status</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,6 +32,29 @@
                                 <td>João Pedro</td>
                                 <td>18</td>
                                 <td>Ativo</td>
+                                <td class="text-right">
+                                    <div class="dropdown">
+                                        <a class="dropdown-ellipses dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fe fe-more-vertical"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 25px, 0px);" x-out-of-boundaries="">
+                                            <a href="https://hookmedia.com.br/app/profile/configuration/?id=4" target="_blank" class="dropdown-item">
+                                                Gerenciar
+                                            </a>
+                                            <hr>
+
+                                            <a href="https://hookmedia.com.br/app/profile/updatestatus/?status=0&amp;profile_id=4" class="dropdown-item">
+                                                Desativar
+                                            </a>
+
+                                            <a href="https://hookmedia.com.br/app/profile/updatestatus/?status=1&amp;profile_id=4" class="dropdown-item">
+                                                Ativar
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                </td>
                             </tr>
 
 
