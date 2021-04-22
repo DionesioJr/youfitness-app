@@ -32,6 +32,16 @@
 
                         <?php
                         foreach ($data['alunos'] as $key => $value) {
+
+                            if ($value['status'] == 1) {
+                                $value['status_name'] = "Ativo";
+                            }
+                            if ($value['status'] == 2) {
+                                $value['status_name'] = "Pendente";
+                            }
+                            if ($value['status'] == 0) {
+                                $value['status_name'] = "Inativo";
+                            }
                         ?>
                             <tr>
                                 <td>
@@ -39,11 +49,11 @@
                                     <span style="margin-left: 10px;"> <?php echo $value['nome']; ?></span>
                                 </td>
                                 <td><?php echo $value['idade']; ?></td>
-                                <td><span class="badge badge-success"><?php echo $value['status']; ?></span></td>
+                                <td><span class="badge badge-success"><?php echo $value['status_name']; ?></span></td>
                                 <td class="text-right">
-                                    <a href="<?php echo BASE_URL; ?>/aluno/visualizar/<?php echo $value['id']; ?>" type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-external-link-alt"></i></a>
-                                    <a href="<?php echo BASE_URL; ?>/aluno/editar/<?php echo $value['id']; ?>" type="button" class="btn btn-outline-warning btn-sm"><i class="fas fa-pen"></i></a>
-                                    <a href="<?php echo BASE_URL; ?>/aluno/excluir/<?php echo $value['id']; ?>" type="button" class="btn btn-outline-danger btn-sm"><i class="far fa-trash-alt"></i></a>
+                                    <a href="<?php echo BASE_URL; ?>/aluno/visualizar/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="<?php echo BASE_URL; ?>/aluno/editar/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-outline-warning btn-sm"><i class="fas fa-pen"></i></a>
+                                    <a href="<?php echo BASE_URL; ?>/aluno/excluir/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-outline-danger btn-sm"><i class="far fa-trash-alt"></i></a>
                                 </td>
                             </tr>
 
@@ -52,15 +62,8 @@
                         }
 
                         ?>
-
-
-
-
                     </tbody>
                 </table>
-
-
-
             </div>
         </div>
 

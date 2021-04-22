@@ -3,8 +3,8 @@ global $DB;
 
 $HOST = 'localhost';
 $DBNAME = 'youfitness';
-$USER = 'dionesio';
-$PASS = 'dionesio';
+$USER = 'youfitness';
+$PASS = '$enha1@yfit';
 
 try {
     $DB = new PDO("mysql:host={$HOST};dbname={$DBNAME}", $USER, $PASS);

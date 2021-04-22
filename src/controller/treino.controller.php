@@ -8,6 +8,12 @@ class Treino
         _Application::applicationView('treino/treino', $data);
     }
 
+    public function hoje()
+    {
+        $data = $_SESSION;
+        _Application::applicationView('treino/hoje', $data);
+    }
+
     public function ficha()
     {
         $data = $_SESSION;

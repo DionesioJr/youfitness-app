@@ -29,7 +29,7 @@
                 <br>
 
                 <div class="list-group">
-                    <a href="<?php echo BASE_URL; ?>/treino/ficha/?id=1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <a href="<?php echo BASE_URL; ?>/treino/ficha/?id=1" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">Ombros</h5>
                             <!-- <small>Até 25 de abril de 2021</small> -->
@@ -38,7 +38,7 @@
                 </div> <br>
 
                 <div class="list-group">
-                    <a href="<?php echo BASE_URL; ?>/treino/ficha/?id=1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <a href="<?php echo BASE_URL; ?>/treino/ficha/?id=1" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">Peitoral</h5>
                             <!-- <small>Até 25 de abril de 2021</small> -->
@@ -47,7 +47,7 @@
                 </div> <br>
 
                 <div class="list-group">
-                    <a href="<?php echo BASE_URL; ?>/treino/ficha/?id=1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <a href="<?php echo BASE_URL; ?>/treino/ficha/?id=1" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">Dorsal</h5>
                             <!-- <small>Até 25 de abril de 2021</small> -->
@@ -56,7 +56,7 @@
                 </div> <br>
 
                 <div class="list-group">
-                    <a href="<?php echo BASE_URL; ?>/treino/ficha/?id=1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <a href="<?php echo BASE_URL; ?>/treino/ficha/?id=1" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">Bícips</h5>
                             <!-- <small>Até 25 de abril de 2021</small> -->
@@ -65,7 +65,7 @@
                 </div><br>
 
                 <div class="list-group">
-                    <a href="<?php echo BASE_URL; ?>/treino/ficha/?id=1" class="list-group-item list-group-item-action flex-column align-items-start active">
+                    <a href="<?php echo BASE_URL; ?>/treino/ficha/?id=1" class="list-group-item list-group-item-action flex-column align-items-start">
                         <div class="d-flex w-100 justify-content-between">
                             <h5 class="mb-1">Tríceps</h5>
                             <!-- <small>Até 25 de abril de 2021</small> -->

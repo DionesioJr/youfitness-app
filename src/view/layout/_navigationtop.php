@@ -6,12 +6,15 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/treino/hoje">Hoje</a>
+        </li>
 
         <li class="nav-item">
           <a class="nav-link" href="<?php echo BASE_URL; ?>/aluno">Alunos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo BASE_URL; ?>/treino">Treino</a>
+          <a class="nav-link" href="<?php echo BASE_URL; ?>/treino">Treinos</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link" href="<?php echo BASE_URL; ?>/configuracao">Configuração</a>

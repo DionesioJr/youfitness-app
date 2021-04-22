@@ -28,11 +28,31 @@ class Alunos
 
     static public function show($id)
     {
+        global $DB;
+        $row = array();
+        $query = $DB->query("SELECT * from alunos where id = $id");
+
+
+        if (empty($query)) {
+            return false;
+        }
+
+        foreach ($query as $key => $value) {
+            $row[] = $value;
+        }
+        return current($row);
     }
 
     static public function store($data)
     {
-        "INSERT INTO `youfitness`.`alunos` (`nome`, `idade`, `peso`, `altura`, `sexo`, `email`, `senha`, `tipo`) VALUES ('Dionésio Guerra', '27', '77', '180', '1', 'dionesiojr@gmail.com', '', '1');";
+        global $DB;
+        $query = $DB->query("INSERT INTO `alunos` (`nome`, `idade`, `peso`, `altura`, `sexo`, `email`, `senha`, `tipo`, `status`) 
+        VALUES ('{$data['nome']}', '{$data['idade']}', '{$data['peso']}', '{$data['altura']}', '{$data['sexo']}', '{$data['email']}', '{$data['senha']}', '{$data['tipo']}', '{$data['status']}');");
+
+        if (empty($query)) {
+            return false;
+        }
+        return true;
     }
 
     static public function update($data)
@@ -41,5 +61,12 @@ class Alunos
 
     static public function destroy($id)
     {
+        global $DB;
+        $query = $DB->query("DELETE from alunos where id = $id");
+
+        if (empty($query)) {
+            return false;
+        }
+        return true;
     }
 }
