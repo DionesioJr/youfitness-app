@@ -68,7 +68,7 @@ function router($routes = false)
             $class_obj->index();
         }
     } else {
-        Home::index();
+        Login::index();
     }
 }
 
