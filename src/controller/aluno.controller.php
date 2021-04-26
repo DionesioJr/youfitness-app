@@ -8,8 +8,10 @@ class Aluno
         $data = $_SESSION;
         $data['alunos'] = Alunos::index();
 
-        if ($_SESSION['user']['tipo'] == 1) {
-            redirect('atreino/hoje');
+        if (isset($_SESSION['user'])) {
+            if ($_SESSION['user']['tipo'] == 1) {
+                redirect('atreino/hoje');
+            }
         }
 
         if (empty($data['alunos'])) {
