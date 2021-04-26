@@ -65,13 +65,14 @@ class Login
 
         if ($email == 'admin@gmail.com') {
             $_SESSION['login'] = true;
-            redirect('aluno');
+            redirect('home');
         }
 
         if (!empty($result_login)) {
             $_SESSION['login'] = true;
             $_SESSION['user'] = $result_login;
-            redirect('aluno');
+
+            redirect('home');
         } else {
             Alert::info("Falha no Login, verifique sua conta!");
             redirect('login');

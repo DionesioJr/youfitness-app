@@ -85,7 +85,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Deseja excluir esse aluno ?</h5>
+                        <h5 class="modal-title" id="exampleModalLongTitle">Você quer deletar este aluno ?</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -96,12 +96,15 @@
 
                             <p>Atenção! Ao excluir todos os dados serão apagados.</p>
 
+                            <br />
                             <img src="<?php echo BASE_URL; ?>/assets/img/illustration/undraw_warning_cyit.svg" width="200px" class="img-responsive" alt="">
+                            <br />
+                            <br />
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Canselar</button>
-                        <a href="<?php echo BASE_URL; ?>/aluno/excluir/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-danger">Sim excluir aluno</a>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <a href="<?php echo BASE_URL; ?>/aluno/excluir/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-danger">Sim, deletar aluno</a>
                     </div>
                 </div>
             </div>

@@ -2,10 +2,15 @@
 class Aluno
 {
 
+
     public function index()
     {
         $data = $_SESSION;
         $data['alunos'] = Alunos::index();
+
+        if ($_SESSION['user']['tipo'] != 2) {
+            redirect('atreino/hoje');
+        }
 
         if (empty($data['alunos'])) {
             _Application::applicationView('aluno/empty', $data);
