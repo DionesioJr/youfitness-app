@@ -24,6 +24,7 @@
                             <th scope="col">Nome</th>
                             <th scope=" col" width="15%">Idade</th>
                             <th scope="col" width="8%">Status</th>
+                            <th scope="col" width="8%">Tipo</th>
                             <th width="15%"></th>
                         </tr>
                     </thead>
@@ -32,6 +33,8 @@
 
                         <?php
                         foreach ($data['alunos'] as $key => $value) {
+
+                            // validando o status
 
                             if ($value['status'] == 1) {
                                 $value['status_name'] = "Ativo";
@@ -42,6 +45,14 @@
                             if ($value['status'] == 0) {
                                 $value['status_name'] = "Inativo";
                             }
+
+                            // validando o tipo
+                            if ($value['tipo'] == 1) {
+                                $value['tipo_name'] = "Aluno";
+                            }
+                            if ($value['tipo'] == 2) {
+                                $value['tipo_name'] = "Administrador";
+                            }
                         ?>
                             <tr>
                                 <td>
@@ -50,12 +61,15 @@
                                 </td>
                                 <td><?php echo $value['idade']; ?></td>
                                 <td><span class="badge badge-success"><?php echo $value['status_name']; ?></span></td>
+                                <td><span class="badge badge-info"><?php echo $value['tipo_name']; ?></span></td>
                                 <td class="text-right">
                                     <a href="<?php echo BASE_URL; ?>/aluno/visualizar/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-external-link-alt"></i></a>
                                     <a href="<?php echo BASE_URL; ?>/aluno/editar/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-outline-warning btn-sm"><i class="fas fa-pen"></i></a>
-                                    <a href="<?php echo BASE_URL; ?>/aluno/excluir/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-outline-danger btn-sm"><i class="far fa-trash-alt"></i></a>
+                                    <a href="#" type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#excluir-modal"><i class="far fa-trash-alt"></i></a>
                                 </td>
                             </tr>
+
+
 
                         <?php
 
@@ -64,6 +78,32 @@
                         ?>
                     </tbody>
                 </table>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="excluir-modal" tabindex="-1" role="dialog" aria-labelledby="excluir-modal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Deseja excluir esse aluno ?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="col-sm-12 text-center">
+
+                            <p>Atenção! Ao excluir todos os dados serão apagados.</p>
+
+                            <img src="<?php echo BASE_URL; ?>/assets/img/illustration/undraw_warning_cyit.svg" width="200px" class="img-responsive" alt="">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Canselar</button>
+                        <a href="<?php echo BASE_URL; ?>/aluno/excluir/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-danger">Sim excluir aluno</a>
+                    </div>
+                </div>
             </div>
         </div>
 
