@@ -5,10 +5,14 @@ class Home
     static public function index()
     {
 
-        if ($_SESSION['user']['tipo'] == 1) {
-            redirect('treino/hoje');
+        if (empty($_SESSION['login'])) {
+            return false;
         }
 
-        redirect('aluno');
+        if ($_SESSION['user']['tipo'] == 1) {
+            redirect('treino/hoje');
+        } else {
+            redirect('aluno');
+        }
     }
 }

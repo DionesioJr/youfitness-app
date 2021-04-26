@@ -65,7 +65,7 @@ class Login
 
         if ($email == 'admin@gmail.com') {
             $_SESSION['login'] = true;
-            redirect('home');
+            redirect('aluno');
         }
 
         if (!empty($result_login)) {

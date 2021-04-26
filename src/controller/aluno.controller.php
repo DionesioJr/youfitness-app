@@ -8,7 +8,7 @@ class Aluno
         $data = $_SESSION;
         $data['alunos'] = Alunos::index();
 
-        if ($_SESSION['user']['tipo'] != 2) {
+        if ($_SESSION['user']['tipo'] == 1) {
             redirect('atreino/hoje');
         }
 
