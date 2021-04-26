@@ -58,15 +58,19 @@ class Login
             $email = !empty($_POST['email']) ? trim($_POST['email']) : '';
             $email = strtolower($email);
 
-            $password = !empty($_POST['password']) ? trim($_POST['password']) : '';
+            $password = !empty($_POST['password']) ? md5(trim($_POST['password'])) : '';
         }
 
+        $result_login = Alunos::login($email, $password);
+
         if ($email == 'admin@gmail.com') {
-
             $_SESSION['login'] = true;
-            $_SESSION['account'] = 1;
-            $_SESSION['token'] = 1;
+            redirect('aluno');
+        }
 
+        if (!empty($result_login)) {
+            $_SESSION['login'] = true;
+            $_SESSION['user'] = $result_login;
             redirect('aluno');
         } else {
             Alert::info("Falha no Login, verifique sua conta!");

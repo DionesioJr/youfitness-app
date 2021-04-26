@@ -69,4 +69,20 @@ class Alunos
         }
         return true;
     }
+
+    static public function login($email, $password)
+    {
+        global $DB;
+        $row = array();
+        $query = $DB->query("SELECT * from alunos where email = '{$email}' AND senha = '{$password}'");
+
+        if (empty($query)) {
+            return false;
+        }
+
+        foreach ($query as $key => $value) {
+            $row[] = $value;
+        }
+        return current($row);
+    }
 }

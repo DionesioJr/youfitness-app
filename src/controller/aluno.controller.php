@@ -67,7 +67,30 @@ class Aluno
         $data['altura'] = trim($_POST['altura']) ?? '';
         $data['sexo'] = trim($_POST['sexo']) ?? '';
         $data['email'] = trim($_POST['email']) ?? '';
-        $data['senha'] = trim($_POST['senha']) ?? '';
+        $data['senha'] = md5(trim($_POST['senha'])) ?? '';
+        $data['tipo'] = trim($_POST['tipo']) ?? '';
+        $data['status'] = trim($_POST['status']) ?? '';
+
+        $result = Alunos::store($data);
+
+        if (empty($result)) {
+            Alert::error("Falha ao criar conta!");
+        } else {
+            Alert::success("Usuario criado com sucesso!");
+        }
+
+        redirect('aluno');
+    }
+
+    public function update()
+    {
+        $data['nome'] = trim($_POST['nome']) ?? '';
+        $data['idade'] = trim($_POST['idade']) ?? '';
+        $data['peso'] = trim($_POST['peso']) ?? '';
+        $data['altura'] = trim($_POST['altura']) ?? '';
+        $data['sexo'] = trim($_POST['sexo']) ?? '';
+        $data['email'] = trim($_POST['email']) ?? '';
+        $data['senha'] = md5(trim($_POST['senha'])) ?? '';
         $data['tipo'] = trim($_POST['tipo']) ?? '';
         $data['status'] = trim($_POST['status']) ?? '';
 
