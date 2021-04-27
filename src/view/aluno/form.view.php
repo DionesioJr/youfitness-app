@@ -16,6 +16,7 @@
         <div class="col-lg-12">
             <div class="bs-component">
                 <form action="<?php echo $data['action']; ?>" method="post">
+                    <input type="hidden" id="id" name="id" value="<?php echo $data['aluno']['id']; ?>">
 
                     <fieldset>
                         <legend>Dados Pessoais</legend>
@@ -43,16 +44,16 @@
                             <div class="form-group col-md-3">
                                 <label for="sexo">Sexo</label>
                                 <select id="sexo" name=sexo required class="form-control">
-                                    <option value="m">Masculino</option>
-                                    <option value="f">Feminino</option>
+                                    <option value="m" <?php if ($data['aluno']['sexo'] == 'm') echo "selected"; ?>>Masculino</option>
+                                    <option value="f" <?php if ($data['aluno']['sexo'] == 'f') echo "selected"; ?>>Feminino</option>
                                 </select>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="status">Status</label>
                                 <select id="status" name="status" required class="form-control">
-                                    <option value="1">Ativo</option>
-                                    <option value="2">Atraso</option>
-                                    <option value="0">Desativado</option>
+                                    <option value="1" <?php if ($data['aluno']['status'] == '1') echo "selected"; ?>>Ativo</option>
+                                    <option value="2" <?php if ($data['aluno']['status'] == '2') echo "selected"; ?>>Atraso</option>
+                                    <option value="0" <?php if ($data['aluno']['status'] == '0') echo "selected"; ?>>Desativado</option>
                                 </select>
                             </div>
                         </div>
@@ -80,13 +81,13 @@
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="aluno" name="tipo" value="1" class="custom-control-input" checked="">
+                                    <input type="radio" id="aluno" name="tipo" value="1" class="custom-control-input" <?php if ($data['aluno']['tipo'] == 1) echo "checked"; ?>>
                                     <label class="custom-control-label" for="aluno">Aluno</label><br>
                                 </div>
                             </div>
                             <div class="form-group col-md-3">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="admin" name="tipo" value="2" class="custom-control-input">
+                                    <input type="radio" id="admin" name="tipo" value="2" class="custom-control-input" <?php if ($data['aluno']['tipo'] == 2) echo "checked"; ?>>
                                     <label class="custom-control-label" for="admin">Adminstrador</label><br>
                                 </div>
 

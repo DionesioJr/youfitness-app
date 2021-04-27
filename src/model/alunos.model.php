@@ -57,6 +57,14 @@ class Alunos
 
     static public function update($data)
     {
+        global $DB;
+        $query = $DB->query("UPDATE `alunos` SET `nome` = '{$data['nome']}', `idade` = '{$data['idade']}', `peso` = '{$data['peso']}', `altura` = '{$data['altura']}', `sexo` = '{$data['sexo']}', `email` = '{$data['email']}', `senha` = '{$data['senha']}', `tipo` = '{$data['tipo']}', `status` = '{$data['status']}' 
+        WHERE (`id` = '{$data['id']}');");
+
+        if (empty($query)) {
+            return false;
+        }
+        return true;
     }
 
     static public function destroy($id)

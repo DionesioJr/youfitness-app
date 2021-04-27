@@ -55,19 +55,20 @@ class Aluno
         $data['aluno']['altura'] = '';
         $data['aluno']['sexo'] = '';
         $data['aluno']['email'] = '';
-        $data['aluno']['senha'] = '';
         $data['aluno']['tipo'] = '';
         $data['aluno']['status'] = '';
         $data['aluno'] = Alunos::show($id);
+        $data['aluno']['senha'] = '';
 
         $data['title'] = "Editar aluno";
-        $data['button_submit'] = "Cadastrar";
-        $data['action'] = BASE_URL . '/aluno/edit';
+        $data['button_submit'] = "Editar Aluno";
+        $data['action'] = BASE_URL . '/aluno/update';
         _Application::applicationView('aluno/form', $data);
     }
 
     public function save()
     {
+        $data['id'] = trim($_POST['id']) ?? '';
         $data['nome'] = trim($_POST['nome']) ?? '';
         $data['idade'] = trim($_POST['idade']) ?? '';
         $data['peso'] = trim($_POST['peso']) ?? '';
@@ -91,17 +92,27 @@ class Aluno
 
     public function update()
     {
-        $data['nome'] = trim($_POST['nome']) ?? '';
-        $data['idade'] = trim($_POST['idade']) ?? '';
-        $data['peso'] = trim($_POST['peso']) ?? '';
-        $data['altura'] = trim($_POST['altura']) ?? '';
-        $data['sexo'] = trim($_POST['sexo']) ?? '';
-        $data['email'] = trim($_POST['email']) ?? '';
-        $data['senha'] = md5(trim($_POST['senha'])) ?? '';
-        $data['tipo'] = trim($_POST['tipo']) ?? '';
-        $data['status'] = trim($_POST['status']) ?? '';
 
-        $result = Alunos::store($data);
+        $id = trim($_POST['id']);
+        $aluno = Alunos::show($id);
+
+        $data['id'] = trim($_POST['id']) ?? $aluno['id'];
+        $data['nome'] = trim($_POST['nome']) ?? $aluno['nome'];
+        $data['idade'] = trim($_POST['idade']) ?? $aluno['idade'];
+        $data['peso'] = trim($_POST['peso']) ?? $aluno['peso'];
+        $data['altura'] = trim($_POST['altura']) ?? $aluno['altura'];
+        $data['sexo'] = trim($_POST['sexo']) ?? $aluno['sexo'];
+        $data['email'] = trim($_POST['email']) ?? $aluno['email'];
+        $data['tipo'] = trim($_POST['tipo']) ?? $aluno['tipo'];
+        $data['status'] = trim($_POST['status']) ?? $aluno['status'];
+
+        if (empty(trim($_POST['senha']))) {
+            $data['senha'] = $aluno['senha'];
+        } else {
+            $data['senha'] = md5(trim($_POST['senha']));
+        }
+
+        $result = Alunos::update($data);
 
         if (empty($result)) {
             Alert::error("Falha ao criar conta!");
