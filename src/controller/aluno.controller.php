@@ -144,12 +144,17 @@ class Aluno
         $id = trim($_GET['id']);
         $result = Alunos::show($id);
 
-        // if (empty($result)) {
-        //     Alert::error("Falha ao tentar apagar a conta!");
-        // } else {
-        //     Alert::success("Usuario apagado com sucesso!");
-        // }
+        if (empty($result)) {
+            Alert::error("Falha ao tentar apagar a conta!");
+            redirect('aluno');
+        }
 
-        redirect('aluno');
+        $data['treinos'] = Treinos::showAluno($id);
+
+        $data['aluno'] = Alunos::show($id);
+
+
+
+        _Application::applicationView('aluno/show', $data);
     }
 }

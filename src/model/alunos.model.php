@@ -2,12 +2,10 @@
 
 class Alunos
 {
-
     public function __construct()
     {
-        // $this->item_type = new Ticket();
-        // $this->item_model = new TicketModel();
     }
+
 
     static public function index()
     {

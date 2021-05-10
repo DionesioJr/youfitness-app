@@ -23,10 +23,10 @@ class Treino
     public function cadastro()
     {
         $data = $_SESSION;
-        $data['title'] = "Cadastro de Aluno";
-        $data['button_submit'] = "Cadastrar novo aluno";
-        $data['action'] = BASE_URL . '/aluno/save';
-        _Application::applicationView('aluno/form', $data);
+        $data['title'] = "Novo Treino";
+        $data['button_submit'] = "Cadastrar novo treino";
+        $data['action'] = BASE_URL . '/treino/save';
+        _Application::applicationView('treino/form', $data);
     }
 
     public function editar()
@@ -40,6 +40,17 @@ class Treino
 
     public function save()
     {
-        redirect('aluno');
+        $data['nome'] = trim($_POST['nome']) ?? '';
+        $data['alunos_id'] = trim($_POST['alunos_id']) ?? '';
+
+        $result = Treinos::store($data);
+
+        if (empty($result)) {
+            Alert::error("Falha ao criar treino!");
+        } else {
+            Alert::success("Treino criado com sucesso!");
+        }
+
+        redirectBack();
     }
 }

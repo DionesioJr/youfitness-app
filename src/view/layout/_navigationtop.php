@@ -23,9 +23,9 @@
         <?php
           }
         } ?>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="<?php echo BASE_URL; ?>/treino">Treinos</a>
-        </li>
+        </li> -->
         <!-- <li class="nav-item">
           <a class="nav-link" href="<?php echo BASE_URL; ?>/configuracao">Configuração</a>
         </li> -->
