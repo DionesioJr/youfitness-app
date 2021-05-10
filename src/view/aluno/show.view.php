@@ -10,13 +10,13 @@
 <hr>
 <br>
 
-<fieldset>
+<!-- <fieldset>
     <legend>Dados do aluno</legend>
     <br>
 </fieldset>
 <br>
 <hr>
-<br>
+<br> -->
 
 
 <fieldset>
