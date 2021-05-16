@@ -67,7 +67,7 @@ class Treinos
         if (empty($query)) {
             return false;
         }
-        return true;
+        return $DB->lastInsertId();
     }
 
     static public function update($data)
