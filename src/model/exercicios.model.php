@@ -61,8 +61,8 @@ class Exercicios
     static public function store($data)
     {
         global $DB;
-        $query = $DB->query("INSERT INTO `exercicios` (`nome`, `peso`, `repeticao`) 
-        VALUES ('{$data['nome']}', '{$data['peso']}', '{$data['repeticao']}');");
+        $query = $DB->query("INSERT INTO `exercicios` (`treinos_id`, `nome`, `peso`, `repeticao`) 
+        VALUES ('{$data['treinos_id']}', '{$data['nome']}', '{$data['peso']}', '{$data['repeticao']}');");
 
         if (empty($query)) {
             return false;
