@@ -63,7 +63,7 @@
                                 <td><span class="badge badge-success"><?php echo $value['status_name']; ?></span></td>
                                 <td><span class="badge badge-info"><?php echo $value['tipo_name']; ?></span></td>
                                 <td class="text-right">
-                                    <a href="<?php echo BASE_URL; ?>/aluno/visualizar/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-external-link-alt"></i></a>
+                                    <a href="<?php echo BASE_URL; ?>/aluno/ficha/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-file-alt"></i></a>
                                     <a href="<?php echo BASE_URL; ?>/aluno/editar/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-outline-warning btn-sm"><i class="fas fa-pen"></i></a>
                                     <a href="#" type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#excluir-modal"><i class="far fa-trash-alt"></i></a>
                                 </td>

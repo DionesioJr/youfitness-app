@@ -138,7 +138,7 @@ class Aluno
     }
 
 
-    public function visualizar()
+    public function ficha()
     {
 
         $id = trim($_GET['id']);
@@ -155,6 +155,6 @@ class Aluno
 
 
 
-        _Application::applicationView('aluno/show', $data);
+        _Application::applicationView('aluno/ficha', $data);
     }
 }
