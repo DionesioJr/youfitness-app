@@ -11,7 +11,7 @@
     </div>
 </div>
 
-<div class="bs-docs-section">
+<!-- <div class="bs-docs-section">
 
     <div class="row">
         <div class="col-sm-12 text-center">
@@ -22,7 +22,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <div class="bs-docs-section">
 

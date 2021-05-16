@@ -4,8 +4,6 @@ class Treino
 
     public function index()
     {
-        $data = $_SESSION;
-        _Application::applicationView('treino/treino', $data);
     }
 
     public function hoje()
@@ -17,6 +15,12 @@ class Treino
     public function ficha()
     {
         $data = $_SESSION;
+
+        $id = $_GET['id'];
+
+        $data['treinos'] = Treinos::show($id);
+        $data['exercicios'] = Exercicios::showTreino($id);
+
         _Application::applicationView('treino/ficha', $data);
     }
 
@@ -40,15 +44,61 @@ class Treino
 
     public function save()
     {
+
+        // treino
         $data['nome'] = trim($_POST['nome']) ?? '';
         $data['alunos_id'] = trim($_POST['alunos_id']) ?? '';
+        $treino_id = Treinos::store($data);
 
-        $result = Treinos::store($data);
+        if (empty($treino_id)) {
+            Alert::error("Falha ao criar treino!");
+        }
+
+        // exercicios
+
+        $data = [];
+        $exercicio = $_POST['exercicio'];
+        $repeticao = $_POST['repeticao'];
+        $peso = $_POST['peso'];
+
+
+        foreach ($exercicio as $key => $value) {
+            $data['treinos_id'] = $treino_id;
+            $data['nome'] = $exercicio[$key];
+            $data['repeticao'] = $repeticao[$key];
+            $data['peso'] = $peso[$key];
+
+            $result = Exercicios::store($data);
+            $data = [];
+        }
+
 
         if (empty($result)) {
-            Alert::error("Falha ao criar treino!");
+            Alert::error("Falha ao adicionar os exercícios!");
+        }
+
+
+
+
+        Alert::success("Treino criado com sucesso!");
+
+        redirectBack();
+    }
+
+    public function excluir()
+    {
+        $id = trim($_GET['id']);
+        if (empty($id)) {
+            redirectBack();
+            return false;
+        }
+
+        $result = Treinos::destroy($id);
+
+        if (empty($result)) {
+            Alert::error("Falha ao tentar apagar o treino!");
         } else {
-            Alert::success("Treino criado com sucesso!");
+            Alert::success("Treino apagado com sucesso!");
         }
 
         redirectBack();

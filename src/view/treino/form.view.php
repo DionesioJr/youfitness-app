@@ -10,45 +10,6 @@
         </div>
     </div>
 
-    <!-- Modal -->
-    <div class="modal fade" id="newExercicio" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="newExercicioLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="newExercicioLabel">Adicionar Novo Exercício</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-
-                    <fieldset>
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label for="">Exercício</label>
-                                <input type="text" class="form-control" id="">
-                            </div>
-                            <div class="form-group col-md-12">
-                                <label for="">Repetição</label>
-                                <input type="text" class="form-control" id="">
-                            </div>
-                            <div class="form-group col-md-12">
-                                <label for="">Carga</label>
-                                <input type="text" class="form-control" id="">
-                            </div>
-                        </div>
-
-                    </fieldset>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-primary">Adicionar</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
     <div class=" bs-docs-section">
 
         <div class="row">
@@ -62,16 +23,35 @@
                             <div class="form-row">
 
                                 <div class="form-group col-md-8">
-                                    <label for="Nome Completo">Nome to treino</label>
+                                    <label for="Nome Completo">Nome do treino</label>
                                     <input type="text" class="form-control" name="nome" required>
-                                    <input type="hidden" class="form-control" name="alunos_id" value="<?php echo $_GET['aluno_id']; ?>" required>
-                                    <div class=""><br>
-
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newExercicio">
-                                            Adicionar exercicios
-                                        </button>
-                                    </div>
+                                    <input type="hidden" name="alunos_id" value="<?php echo $_GET['aluno_id']; ?>">
                                 </div>
+                            </div>
+                        </fieldset>
+                        <hr>
+
+                        <fieldset>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <label for="">Exercício</label>
+                                    <input type="text" class="form-control" id="exercicio" placeholder="Exercício 1">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="">Repetição</label>
+                                    <input type="text" class="form-control" id="repeticao" placeholder="3 x 15">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="">peso</label>
+                                    <input type="text" class="form-control" id="peso" placeholder="10">
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <button type="button" class="btn btn-primary" onclick="adicionarExecicio()">
+                                    Adicionar exercícios
+                                </button>
                             </div>
                         </fieldset>
 
@@ -82,31 +62,9 @@
 
                                     <div class="bs-component">
 
-                                        <table class="table ">
+                                        <table class="table">
 
-                                            <tbody>
-                                                <tr style="height: 60px;">
-
-                                                    <td>
-                                                        <label>Exercício 1</label>
-                                                    </td>
-                                                    <td>3 x 15</td>
-                                                    <td>20 kG</td>
-                                                    <td width="10px">
-                                                        <a href="#" type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#excluir-modal"><i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
-
-                                                <tr style="height: 60px;">
-                                                    <td>
-                                                        <label>Exercício 1</label>
-                                                    </td>
-                                                    <td>3 x 15</td>
-                                                    <td>20 kG</td>
-                                                    <td width="10px">
-                                                        <a href="#" type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#excluir-modal"><i class="far fa-trash-alt"></i></a>
-                                                    </td>
-                                                </tr>
+                                            <tbody id="table-exercicio">
 
                                             </tbody>
                                         </table>
@@ -125,3 +83,36 @@
 
         </div>
     </div>
+
+    <script>
+        function adicionarExecicio() {
+
+            var exercicio = $("#exercicio").val();
+            var repeticao = $("#repeticao").val();
+            var peso = $("#peso").val();
+            var id_tr = Math.floor((Math.random() * 999999) + 1);
+
+            if (exercicio === "" || repeticao === "" || peso === "") {
+                alert("Existe campos que precisa se preenchidos");
+                return false;
+            }
+
+            var input = "<input type=\"hidden\" name=\"exercicio[]\" value=\"" + exercicio + "\">" +
+                "<input type=\"hidden\" name=\"repeticao[]\" value=\"" + repeticao + "\">" +
+                "<input type=\"hidden\" name=\"peso[]\" value=\"" + peso + "\">" + "";
+
+            var html = "<tr id=\"" + id_tr + "\" style=\"height: 60px;\">" + input +
+                "<td><label>" + exercicio + "</label></td>" +
+                "<td>" + repeticao + "</td>" +
+                "<td>" + peso + " kg</td>" +
+                "<td width=\"10 px \"> <a href=\"# \" onclick=\"removerExecicio('" + id_tr + "');\" type = \"button \" class=\"btn btn-outline-danger btn-sm \"><i class=\"far fa-trash-alt \"></i></a></td>" +
+                "</tr>";
+
+            $("#table-exercicio").append(html);
+
+        }
+
+        function removerExecicio(id) {
+            $("#" + id).remove();
+        }
+    </script>
