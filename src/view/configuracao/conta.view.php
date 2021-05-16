@@ -4,7 +4,7 @@
          <h3>Configuração</h3>
        </div>
        <div class="col-lg-1 col-md-1 col-sm-1">
-         <a href="<?php echo BASE_URL; ?>/aluno" type="button" class="btn btn-secondary">Voltar</a>
+         <a href="javascript:history.back()" type="button" class="btn btn-secondary">Voltar</a>
        </div>
 
      </div>

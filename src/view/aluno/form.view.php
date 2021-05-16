@@ -5,7 +5,7 @@
         </div>
         <div class="row justify-content-end">
             <div class="col">
-                <a href="<?php echo BASE_URL; ?>/aluno" type="button" class="btn btn-secondary">Voltar</a>
+                <a href="javascript:history.back()" type="button" class="btn btn-secondary">Voltar</a>
             </div>
         </div>
     </div>
