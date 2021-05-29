@@ -20,7 +20,7 @@
   <!-- Theme CSS -->
   <!-- <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/bootstrap.css" id="stylesheetLight"> -->
   <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css" id="stylesheetLight">
-  <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/login.css" id="stylesheetLight">
+  <link rel="stylesheet" href="<?php echo BASE_URL; ?>/assets/css/login.css?v=2" id="stylesheetLight">
 
   <!-- jquery -->
   <script src="<?php echo BASE_URL; ?>/assets/libs/jquery/dist/jquery.min.js"></script>
@@ -58,7 +58,8 @@
           <!-- Image -->
           <div class="text-center text-white">
             <!-- <img src="<?php echo BASE_URL; ?>/assets/img/logo.png" alt="..." class="img-fluid""> -->
-            <h1>YOU FITNESS</h1>
+            <!-- <h1>YOU FITNESS</h1> -->
+            <img src="<?php echo BASE_URL; ?>/assets/img/you-fitness.png" width="260px" alt="logo">
           </div>
           <br>
 

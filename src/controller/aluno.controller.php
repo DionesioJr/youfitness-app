@@ -10,7 +10,7 @@ class Aluno
 
         if (isset($_SESSION['user'])) {
             if ($_SESSION['user']['tipo'] == 1) {
-                redirect('atreino/hoje');
+                redirect('atreino/aluno');
             }
         }
 
@@ -145,7 +145,7 @@ class Aluno
         $result = Alunos::show($id);
 
         if (empty($result)) {
-            Alert::error("Falha ao tentar apagar a conta!");
+            Alert::error("Falha na listagem!");
             redirect('aluno');
         }
 

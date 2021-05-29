@@ -1,7 +1,12 @@
 <div class="page-header">
     <div class="row">
-        <div class="col">
+        <div class="col-md-11 col-sm-6 ">
             <h3><?php echo $data['aluno']['nome']; ?></h3>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col">
+                <a href="javascript:history.back()" type="button" class="btn btn-secondary">Voltar</a>
+            </div>
         </div>
     </div>
 </div>
@@ -18,10 +23,9 @@
 <hr>
 <br> -->
 
-
 <fieldset>
     <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-10 col-sm-6">
             <h4>Ficha de treinos</h4>
         </div>
         <div class="row justify-content-end">
@@ -54,20 +58,18 @@
 
                         <div class="list-group-item list-group-item-action flex-column align-items-start">
                             <div class="row">
-                                <div class="col-md-11">
+                                <div class="col-md-11 col-sm-10">
                                     <a href="<?php echo BASE_URL; ?>/treino/ficha/?id=<?php echo $value['id']; ?>" class="list-group-item-action">
                                         <div class="d-flex w-100 justify-content-between">
                                             <h5 class="mb-1"><?php echo $value['nome']; ?></h5>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-md-1">
+                                <div class="col-md-1 col-sm-2">
                                     <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#excluir-modal"><i class="far fa-trash-alt"></i></button>
                                 </div>
                             </div>
                         </div>
-
-
 
                         <!-- Modal -->
                         <div class="modal fade" id="excluir-modal" tabindex="-1" role="dialog" aria-labelledby="excluir-modal" aria-hidden="true">

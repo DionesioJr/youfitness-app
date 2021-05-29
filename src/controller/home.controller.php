@@ -10,7 +10,7 @@ class Home
         }
 
         if ($_SESSION['user']['tipo'] == 1) {
-            redirect('treino/hoje');
+            redirect('treino/aluno');
         } else {
             redirect('aluno');
         }

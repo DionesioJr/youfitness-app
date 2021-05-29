@@ -2,14 +2,26 @@
 class Treino
 {
 
-    public function index()
-    {
-    }
-
-    public function hoje()
+    public function aluno()
     {
         $data = $_SESSION;
-        _Application::applicationView('treino/hoje', $data);
+
+        $id = $data['user']['id'];
+
+        $result = Alunos::show($id);
+
+        if (empty($result)) {
+            Alert::error("Não foi encontrado ficha para este aluno!");
+            redirect('aluno');
+        }
+
+        $data['treinos'] = Treinos::showAluno($id);
+
+        $data['aluno'] = Alunos::show($id);
+
+
+
+        _Application::applicationView('aluno/ficha', $data);
     }
 
     public function ficha()
