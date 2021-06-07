@@ -3,11 +3,18 @@
         <div class="col-md-11 col-sm-6 ">
             <h3><?php echo $data['aluno']['nome']; ?></h3>
         </div>
-        <div class="row justify-content-end">
-            <div class="col">
-                <a href="javascript:history.back()" type="button" class="btn btn-secondary">Voltar</a>
+
+        <?php
+        if ($_SESSION['user']['tipo'] == 2) {
+        ?>
+            <div class="row justify-content-end">
+                <div class="col">
+                    <a href="javascript:history.back()" type="button" class="btn btn-secondary">Voltar</a>
+                </div>
             </div>
-        </div>
+        <?php
+        }
+        ?>
     </div>
 </div>
 
@@ -28,11 +35,19 @@
         <div class="col-md-10 col-sm-6">
             <h4>Ficha de treinos</h4>
         </div>
-        <div class="row justify-content-end">
-            <div class="col">
-                <a href="<?php echo BASE_URL; ?>/treino/cadastro/?aluno_id=<?php echo $data['aluno']['id']; ?>" type="button" class="btn btn-warning"> Adicionar Treino</a>
+
+        <?php
+        if ($_SESSION['user']['tipo'] == 2) {
+        ?>
+            <div class="row justify-content-end">
+                <div class="col">
+                    <a href="<?php echo BASE_URL; ?>/treino/cadastro/?aluno_id=<?php echo $data['aluno']['id']; ?>" type="button" class="btn btn-warning"> Adicionar Treino</a>
+                </div>
             </div>
-        </div>
+
+        <?php
+        }
+        ?>
     </div>
     <br>
     <div class="row">
@@ -65,9 +80,15 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="col-md-1 col-sm-2">
-                                    <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#excluir-modal"><i class="far fa-trash-alt"></i></button>
-                                </div>
+                                <?php
+                                if ($_SESSION['user']['tipo'] == 2) {
+                                ?>
+                                    <div class="col-md-1 col-sm-2">
+                                        <button type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#excluir-modal"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                <?php
+                                }
+                                ?>
                             </div>
                         </div>
 
