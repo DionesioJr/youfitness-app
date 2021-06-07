@@ -82,10 +82,13 @@ class Treinos
         return true;
     }
 
-    static public function destroy($id)
+    static public function destroy($id, $alunos_id)
     {
         global $DB;
-        $query = $DB->query("DELETE from treinos where id = $id");
+        $query = $DB->query("DELETE from exercicios where treinos_id = '$id'");
+
+        $query = $DB->query("DELETE from treinos where id = '$id' and alunos_id = '$alunos_id'");
+
 
         if (empty($query)) {
             return false;
