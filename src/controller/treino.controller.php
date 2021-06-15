@@ -105,7 +105,7 @@ class Treino
             return false;
         }
 
-        $result = Treinos::destroy($id, $_SESSION['user']['id']);
+        $result = Treinos::destroy($id);
 
         if (empty($result)) {
             Alert::error("Falha ao tentar apagar o treino!");

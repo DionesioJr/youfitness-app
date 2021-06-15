@@ -20,7 +20,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Nome</th>
-                        <th scope=" col" width="15%">Idade</th>
+                        <th scope="col" width="15%">Idade</th>
                         <th scope="col" width="8%">Status</th>
                         <th scope="col" width="8%">Tipo</th>
                         <th width="15%"></th>
@@ -63,9 +63,57 @@
                             <td class="text-right">
                                 <a href="<?php echo BASE_URL; ?>/aluno/ficha/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-file-alt"></i></a>
                                 <a href="<?php echo BASE_URL; ?>/aluno/editar/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-outline-warning btn-sm"><i class="fas fa-pen"></i></a>
-                                <a href="#" type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#excluir-modal"><i class="far fa-trash-alt"></i></a>
+                                <a href="#" type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#excluir-modal-<?php echo $value['id']; ?>"><i class="far fa-trash-alt"></i></a>
+                                <!-- <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Actions
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <ul class="list-group">
+                                            <li class="list-group-item">
+                                                <a href="<?php echo BASE_URL; ?>/aluno/ficha/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-outline-info btn-sm"><i class="fas fa-file-alt"></i></a> Ficha
+                                            </li>
+                                            <li class="list-group-item">
+                                                <a href="<?php echo BASE_URL; ?>/aluno/editar/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-outline-warning btn-sm"><i class="fas fa-pen"></i></a> Editar
+                                            </li>
+                                            <li class="list-group-item">
+                                                <a href="#" type="button" class="btn btn-outline-danger btn-sm" data-toggle="modal" data-target="#excluir-modal-<?php echo $value['id']; ?>"><i class="far fa-trash-alt"></i></a> Remover
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div> -->
                             </td>
                         </tr>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="excluir-modal-<?php echo $value['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="excluir-modal-<?php echo $value['id']; ?>" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Você quer deletar este aluno ?</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                        <div class="col-sm-12 text-center">
+
+                                            <p>Atenção! Ao excluir todos os dados serão apagados.</p>
+
+                                            <br />
+                                            <img src="<?php echo BASE_URL; ?>/assets/img/illustration/undraw_warning_cyit.svg" width="200px" class="img-responsive" alt="">
+                                            <br />
+                                            <br />
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <a href="<?php echo BASE_URL; ?>/aluno/excluir/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-danger">Sim, deletar aluno</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
 
 
@@ -76,35 +124,6 @@
                     ?>
                 </tbody>
             </table>
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="excluir-modal" tabindex="-1" role="dialog" aria-labelledby="excluir-modal" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">Você quer deletar este aluno ?</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-
-                        <div class="col-sm-12 text-center">
-
-                            <p>Atenção! Ao excluir todos os dados serão apagados.</p>
-
-                            <br />
-                            <img src="<?php echo BASE_URL; ?>/assets/img/illustration/undraw_warning_cyit.svg" width="200px" class="img-responsive" alt="">
-                            <br />
-                            <br />
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                        <a href="<?php echo BASE_URL; ?>/aluno/excluir/?id=<?php echo $value['id']; ?>" type="button" class="btn btn-danger">Sim, deletar aluno</a>
-                    </div>
-                </div>
-            </div>
         </div>
 
     </div>
@@ -325,3 +344,7 @@
 
     });
 </script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

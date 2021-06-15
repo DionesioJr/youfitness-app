@@ -68,7 +68,17 @@ class Alunos
     static public function destroy($id)
     {
         global $DB;
-        $query = $DB->query("DELETE from alunos where id = $id");
+
+        $treinos = Treinos::showAluno($id);
+
+        if (!empty($treinos)) {
+            foreach ($treinos as $key => $treino) {
+                $destroy =  Treinos::destroy($treino['id']);
+            }
+        }
+
+
+        $query = $DB->query("DELETE from alunos where id = '$id'");
 
         if (empty($query)) {
             return false;
