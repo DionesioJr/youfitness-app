@@ -101,6 +101,8 @@ function redirectBack()
 
 function sessionStart()
 {
-    session_cache_expire(43200); // 30 dias
-    session_start();
+    if (session_status() == PHP_SESSION_NONE) {
+        session_cache_expire(43200); // 30 dias
+        session_start();
+    }
 }

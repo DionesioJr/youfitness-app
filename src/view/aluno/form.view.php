@@ -81,7 +81,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-3">
                                 <div class="custom-control custom-radio">
-                                    <input type="radio" id="aluno" name="tipo" value="1" class="custom-control-input" <?php if ($data['aluno']['tipo'] == 1) echo "checked"; ?>>
+                                    <input type="radio" id="aluno" name="tipo" checked value="1" class="custom-control-input" <?php if ($data['aluno']['tipo'] == 1) echo "checked"; ?>>
                                     <label class="custom-control-label" for="aluno">Aluno</label><br>
                                 </div>
                             </div>
